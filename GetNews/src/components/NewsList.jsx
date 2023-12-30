@@ -7,7 +7,7 @@ const NewsList = ({articles,currentPage,loading,setCurrentPage }) => {
   const isempty = articles?.length === 0;
 
 
-  const pageSize =4;
+  const pageSize = 6;
 
 
   const onPageChange = (pageNumber) => {
@@ -20,7 +20,7 @@ const handlePageClick =(pageNumber)=>{
  const totalPages = Math.ceil(totalArticles / pageSize);
  const startIndex = (currentPage - 1) * pageSize;
  const endIndex = startIndex + pageSize;
- const currentArticles =articles.slice(startIndex,endIndex);
+ const currentArticles = articles ? articles.slice(startIndex, endIndex) : [];
 
  
  if (isempty) {
@@ -56,8 +56,8 @@ const handlePageClick =(pageNumber)=>{
                     
                   </Card.Text>
 
-                  <a href={article?.url && article.url} target="_blank" className="text-warning">
-                    Read More
+                  <a href={article?.url && article.url} target="_blank"  className="text-warning Readmorebtn">
+                   Read More
                   </a>
                 </Card.Body>
               </Card>

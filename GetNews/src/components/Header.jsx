@@ -4,14 +4,14 @@ import Form from 'react-bootstrap/Form';
 import Nav from 'react-bootstrap/Nav';
 import Navbar from 'react-bootstrap/Navbar';
 import NavDropdown from 'react-bootstrap/NavDropdown';
-
+import Badge from 'react-bootstrap/Badge';
 function Header({searchQuery,handleSearchInputChange,setCategory}) {
 
 
   return (
     <Navbar expand="lg" className="bg-body-tertiary">
       <Container fluid>
-        <Navbar.Brand href="#">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="#" className="fw-bold">G-<Badge bg="warning">News</Badge></Navbar.Brand>
         <Navbar.Toggle aria-controls="navbarScroll" />
         <Navbar.Collapse id="navbarScroll">
           <Nav
@@ -52,7 +52,6 @@ function Header({searchQuery,handleSearchInputChange,setCategory}) {
             onChange={handleSearchInputChange}
             />
           </Form>
-          <Button variant="outline-success">Search</Button>
 
         </Navbar.Collapse>
       </Container>
